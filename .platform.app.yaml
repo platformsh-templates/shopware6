@@ -48,12 +48,14 @@ hooks:
         if [ ! -f $PLATFORM_APP_DIR/installer/installed ]; then
             # setup the environment
             echo "Running system:setup"
-            bin/console system:setup || 1
+            bin/console system:setup || setup_error=1
             # create database with a basic setup (admin user and storefront sales channel)
             echo "Running system:install"
             bin/console system:install --create-database --basic-setup --force
             touch $PLATFORM_APP_DIR/installer/installed
         fi;
+
+        bin/console cache:clear
 
 # The relationships of the application with services or other applications.
 # The left-hand side is the name of the relationship as it will be exposed

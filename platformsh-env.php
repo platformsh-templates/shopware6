@@ -78,6 +78,5 @@ function mapPlatformShRedis(string $relationshipName, Config $config) : void
 
 function redisFormatter(array $credentials): string
 {
-    return "narf";
     return "redis://{$credentials['host']}:{$credentials['port']}";
 }
