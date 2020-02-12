@@ -7,8 +7,8 @@
         <import resource="services/defaults.xml" />
     </imports>
 
-    <service id="redis.handler">
-        <argument>dsn</argument>
+    <service id="symfony\component\httpfoundation\session\storage\handler\redissessionhandler">
+        <argument>%env(string:REDIS_URL)%</argument>
         <factory class="Symfony\Component\HttpFoundation\Session\Storage\Handler\SessionHandlerFactory" method="createHandler"/>
     </service>
 
