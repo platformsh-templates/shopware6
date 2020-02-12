@@ -9,7 +9,7 @@
 
     <services>
         <service id="Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler">
-            <argument type="service" id="cache.redis"/>
+            <argument type="service" id="cache.adapter.redis"/>
         </service>
     </services>
 
