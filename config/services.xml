@@ -7,10 +7,9 @@
         <import resource="services/defaults.xml" />
     </imports>
 
-    <services>
-        <service id="Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler">
-            <argument type="service" id="cache.adapter.redis"/>
-        </service>
-    </services>
+    <service id="redis.handler">
+        <argument>dsn</argument>
+        <factory class="Symfony\Component\HttpFoundation\Session\Storage\Handler\SessionHandlerFactory" method="createHandler"/>
+    </service>
 
 </container>
