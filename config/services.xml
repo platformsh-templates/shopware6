@@ -6,4 +6,11 @@
     <imports>
         <import resource="services/defaults.xml" />
     </imports>
+
+    <services>
+        <service id="Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler">
+            <argument type="service" id="cache.redis"/>
+        </service>
+    </services>
+
 </container>

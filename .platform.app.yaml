@@ -48,6 +48,7 @@ hooks:
         if [ ! -f $PLATFORM_APP_DIR/installer/installed ]; then
             # setup the environment
             #echo "Running system:setup"
+            # This must be run manually for now, so that it can create thw jwt files and fail gracefully on the DB.
             #bin/console system:setup || setup_error=1
             # create database with a basic setup (admin user and storefront sales channel)
             echo "Running system:install"
